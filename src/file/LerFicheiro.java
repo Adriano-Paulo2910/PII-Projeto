@@ -9,5 +9,5 @@ package file;
  * @author paulo
  */
 class LerFicheiro {
-    
+    //Em desenvolvimento
 }
