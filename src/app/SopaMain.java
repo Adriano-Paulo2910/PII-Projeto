@@ -41,6 +41,7 @@ public class SopaMain {
                     } else if (opcao == 2) {
                         System.out.println("Modo Automático selecionado.");
                         System.out.println("Ainda não foi implementado...");
+                        System.out.println("As palavras as palavras virão do ficheiro");
                         //funcionalidade.carregarPalavrasFicheiro();
                         //funcionalidade.gerarSopaAutomaticamente();
                         //funcionalidade.imprimeSopa();

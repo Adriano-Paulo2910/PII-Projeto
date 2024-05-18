@@ -102,7 +102,7 @@ public class Funcionalidade {
             while (!adicionada) {
                 int linha = random.nextInt(tamanho);
                 int coluna = random.nextInt(tamanho);
-                int direcaoDasPalavrasNaSopa = random.nextInt(8);
+                int direcaoDasPalavrasNaSopa = random.nextInt(6);
 
                 // Verifica se a palavra pode ser colocada na posição gerada
                 boolean podeColocar = podeColocarPalavraNaPosicao(tamanho, palavra, linha, coluna, direcaoDasPalavrasNaSopa);
@@ -148,16 +148,6 @@ public class Funcionalidade {
                 break;
             case 5: // Diagonal (sudoeste)
                 if (linha + tamanhoPalavra <= tamanho && coluna - tamanhoPalavra >= -1) {
-                    return true;
-                }
-                break;
-            case 6: // Diagonal (nordeste)
-                if (linha - tamanhoPalavra >= -1 && coluna + tamanhoPalavra <= tamanho) {
-                    return true;
-                }
-                break;
-            case 7: // Diagonal (noroeste)
-                if (linha - tamanhoPalavra >= -1 && coluna - tamanhoPalavra >= -1) {
                     return true;
                 }
                 break;
@@ -222,15 +212,37 @@ public class Funcionalidade {
     public void imprimeSopa() {
         int tamanho = sopaDeLetra.length;
         System.out.println("---------- SOPA DE LETRAS ----------");
+
+        // Imprime a linha de números de colunas
+        System.out.print("   ");
         for (int i = 0; i < tamanho; i++) {
+            System.out.printf("%2d ", i);
+        }
+        System.out.println();
+
+        // Imprime cada linha com o número da linha no início
+        for (int i = 0; i < tamanho; i++) {
+            System.out.printf("%2d| ", i);
             for (int j = 0; j < tamanho; j++) {
-                System.out.print(sopaDeLetra[i][j] + " ");
+                System.out.print(sopaDeLetra[i][j] + "  ");
             }
             System.out.println();
         }
         System.out.println("------------------------------------");
     }
 
+//    public void imprimeSopa() {
+//        int tamanho = sopaDeLetra.length;
+//        System.out.println("---------- SOPA DE LETRAS ----------");
+//        for (int i = 0; i < tamanho; i++) {
+//            for (int j = 0; j < tamanho; j++) {
+//                System.out.print(sopaDeLetra[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
+//        System.out.println("------------------------------------");
+//    }
+    
     // Verifica se a palavra está na posição especificada na sopa de letras
     public boolean procurarPalavra(String palavra, int linha, int coluna) {
         for (int i = 0; i < palavra.length(); i++) {
