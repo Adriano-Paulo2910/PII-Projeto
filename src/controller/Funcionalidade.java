@@ -13,8 +13,7 @@ public class Funcionalidade {
     //Matriz que representa a sopa de letra
     char sopaDeLetra[][];
 
-    public Funcionalidade() {
-    }
+    public Funcionalidade() {}
 
     // Função que adiciona 
     public void adicionarPalavrasManualmente(Scanner scanner) {
